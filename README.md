@@ -1,68 +1,47 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ketang
 
-## Available Scripts
+## 简介
 
-In the project directory, you can run:
+这是一个基于create-react-app的react作品。
 
-### `npm start`
+#### 实现的功能：
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 首页：顶部导航折页开合，中间轮播图自动切换，主体课程产品列表下拉刷新，底部导航控制三个一级路由：首页、我的课程、个人中心
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- 课程详情页：展示课程视频、课程简介，可以点击实现购买。
 
-### `npm test`
+- 我的课程页：有“未支付”、“已支付”两个受二级路由管控的栏目，栏目信息呈列表展示，对未支付的课程，可以实现支付操作。
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 个人中心页：展示个人基本信息，有登录与退出功能。
 
-### `npm run build`
+- 注册页：实现用户注册功能。
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 登录页：实现用户登录功能。
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### 涉及的技术栈：
 
-### `npm run eject`
+- 基于create-react-app创建工程化项目，暴露webpack.config.js实现个性化配置。
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- 基于git管理本地仓库代码的更新迭代，以及基于GitHub远程仓库实现项目开发时的团队协同。
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 基于less组织和编写css样式。
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- 基于webpack.config.js实现个性化的编译配置。
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- 基于redux、react-redux进行统一的状态管理，实现组件间的信息传递。
 
-## Learn More
+- 基于redux三大中间件redux-logger、redux-thunk、redux-promise，实现redux操作：在控制台的清晰展示、处理异步的dispatch派发、在dispatch派发的时候支持promise操作。
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- 基于react-router-dom路由，实现页面之间的切换跳转以及信息通信。
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- 基于axios异步的处理对服务器端的数据请求。
 
-### Code Splitting
+- 基于blueimp-md5实现登录、注册等用户信息的md5加密。
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- 基于ant-design的UI组件，实现项目各功能版块快速搭建与应用。
 
-### Analyzing the Bundle Size
+- 基于express快速构建与响应对服务器端的API接口请求。
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- ...
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
