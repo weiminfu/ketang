@@ -1,38 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+    <meta charset="utf-8"/>
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no,user-scalable=no"/>
+    <!--    <meta name="theme-color" content="#000000" />-->
+    <!--    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />-->
+    <title>ketang</title>
+</head>
+<body>
+<!-- <noscript>You need to enable JavaScript to run this app.</noscript>-->
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+<!--把rem计算放到body头部，目的是为了保证css导入后才执行这段JS-->
+<!--不写在index中而是写在页面中，就是为了保证这段程序加载速度快一些，没必要等到合并后的JS加载，先把样式处理了-->
+<script>
+	;(function anonymous() {
+			function computed() {
+				let HTML = document.documentElement;
+				let winW = HTML.clientWidth;
+				let desW = 750;
+				if (winW >= desW) {
+					HTML.style.fontSize = '100px';
+					return;
+				}
+				HTML.style.fontSize = winW / desW * 100 + 'px'; // html中单独编写的代码尽量不要出现{}等操作，例如：ES6模板字符串，否则webpack编译失败
+			}
+			computed();
+			window.addEventListener('resize', computed, false);
+		})();
+</script>
+<div id="root"></div>
+</body>
 </html>

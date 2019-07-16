@@ -1,0 +1,118 @@
+/*import antd.css*/
+@import "~antd/dist/antd.css";
+
+/*rem*/
+html {
+  font-size: 100px; /*750:1rem=100px*/
+}
+
+#root {
+  margin: 0 auto;
+  max-width: 750px;
+}
+
+/*NavTop*/
+.headerNavBox {
+  @BG: #2A2A2A;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 1.12rem;
+  line-height: 1.12rem;
+  background: @BG;
+  color: #ffffff;
+
+  .homeBox {
+    height: 100%;
+
+    .baseBox {
+      position: relative;
+      height: 100%;
+
+      .logo {
+        position: absolute;
+        left: .16rem;
+        top: 50%;
+        margin-top: -.31rem;
+        width: 2.1rem;
+        height: .62rem;
+        font-size: 0;
+        background: url("../images/logo.png") no-repeat;
+        -webkit-background-size: 100% 100%;
+        background-size: 100% 100%;
+      }
+
+      .icon {
+        position: absolute;
+        right: .16rem;
+        top: 50%;
+        margin-top: -.4rem;
+      }
+    }
+
+    .filterBox {
+      position: absolute;
+      top: 1.1rem;
+      left: 0;
+      z-index: 999;
+      padding: 0 .56rem;
+      width: 100%;
+      background: @BG;
+
+      li {
+        font-size: .32rem;
+        line-height: 1.1rem;
+        text-align: center;
+        color: #ffffff;
+        border-top: .02rem solid lighten(@BG, 20%); /*lighten（）是less提供的减轻颜色的方法*/
+      }
+    }
+  }
+}
+
+/*NavBottom*/
+.footerNavBox{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 1.06rem;
+  line-height: 1.06rem;
+  border-top: .02rem solid #D5D5D5;
+
+
+  display: flex;
+  a{
+    flex: 1;
+    text-align: center;
+    color: #2A2A2A;
+
+    i{
+      display: block;
+      margin-top: .12rem;
+      font-size: .4rem;
+    }
+
+    span{
+      display: block;
+      height: .5rem;
+      line-height: .5rem;
+      font-size: .32rem;
+    }
+
+    &.active{
+      color: #9D0800;
+      font-weight: bold;
+    }
+  }
+}
+
+/*container*/
+.container{
+  padding: 1.12rem 0 1.08rem 0;
+  height: 10000px;
+}
