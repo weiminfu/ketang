@@ -45,3 +45,4 @@
 
 - ...
 
+## 详细的开发文档 https://github.com/weiminfu/ketang/blob/master/devDoc.md#%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3%E4%B8%80%E4%B8%AA%E5%AE%8C%E6%95%B4%E7%9A%84%E5%9F%BA%E4%BA%8Ecreate-react-app%E5%AE%98%E6%96%B9%E8%84%9A%E6%89%8B%E6%9E%B6%E7%9A%84react%E9%A1%B9%E7%9B%AEketang 
