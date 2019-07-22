@@ -10,12 +10,12 @@ const duration = 300;
 
 const defaultStyle = {
 	transition: `opacity ${duration}ms ease-in-out`,
-	opacity: 0,
+	opacity: 0
 };
 
 const transitionStyles = {
-	entering: { opacity: 1 },
-	entered:  { opacity: 1 },
+	entering: { opacity: 1},
+	entered:  { opacity: 1},
 	exiting:  { opacity: 0 },
 	exited:  { opacity: 0 },
 };
@@ -47,7 +47,8 @@ class NavTop extends Component {
 						{(state)=>{
 							return <ul className={'filterBox'} style={{
 								...defaultStyle,
-								...transitionStyles[state]
+								...transitionStyles[state],
+								display:this.state.in?'block':'none'
 							}}>
 								<li>全部课程</li>
 								<li>REACT课程</li>
