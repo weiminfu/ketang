@@ -45,7 +45,7 @@ class Person extends Component {
 	*   2.如果当前组件之前没有彻底从页面中移除（本组件内部的子组件在切换），每一次走的是更新的流程，不是重新挂载的流程。
 	* */
 	
-	async componentWillUpdate() {
+	async componentWillReceiveProps() {
 		let result = await checkLogin();
 		let isLogin = parseFloat(result.code) === 0 ? true : false;
 		this.setState({isLogin});

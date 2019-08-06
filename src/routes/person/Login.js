@@ -13,6 +13,8 @@ import md5 from 'blueimp-md5';
 /*import login*/
 import {login} from "../../api/person";
 
+import action from '../../store/action/index';
+
 /*登录失败提示框*/
 function loginFail() {
 	let secondsToGo = 10;
@@ -46,6 +48,12 @@ class Login extends Component {
 				password = md5(password);
 				let result=await login({name: username, password: password});
 				if (parseFloat(result.code)===0){
+					this.props.queryBaseInfo();
+					
+					// 登录成功后我们需要重新获取已购买的课程信息（未登录下，从
+					// 服务器获取的支付课程信息是获取不到的，但是登录后，我们把购买
+					// 信息同步到redux中，这样在我的课程中才能展示出来相关的信息）
+					this.props.queryPay();
 					this.props.history.go(-1);
 					return ;
 				}
@@ -104,4 +112,4 @@ class Login extends Component {
 
 
 /*在原来组件的基础上再高阶一下*/
-export default Form.create({name: 'normal_login'})(connect()(Login));
+export default Form.create({name: 'normal_login'})(connect(null,{...action.person,...action.course})(Login));

@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
+// import {connect} from 'react-redux';
+import {Route,Switch,Redirect} from "react-router-dom";
+import List from "./course/List";
+import Info from "./course/Info";
+import '../static/css/course.less';
 
 class Home extends Component {
 	constructor(props, context) {
@@ -8,17 +12,14 @@ class Home extends Component {
 	
 	render() {
 		return (
-			<div>
-				首页
-			</div>
+			<section className='courseBox'>
+				<Switch>
+					<Route path={'/course'} exact component={List}/>
+					<Route path={'/course/info'} component={Info}/>
+				</Switch>
+			</section>
 		);
 	}
 }
 
-function mapStateToProps(state) {
-	return {};
-}
-
-export default connect(
-	mapStateToProps,
-)(Home);
+export default Home;
